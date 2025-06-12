@@ -58,10 +58,10 @@ resource "aws_instance" "linux_instance" {
                 #!/bin/bash
                 
                 #更新系统
-                yum update-y
+                yum update -y
 
                 #安装Nginx
-                yum install nginx y
+                yum install nginx -y
 
                 #启动Nginx
                 systemctl start nginx
@@ -74,12 +74,12 @@ resource "aws_instance" "linux_instance" {
                 sudo yum -y install ruby
                 sudo yum -y install wget
                 cd /home/ec2-user
-                wget https://aws-codedeploy-ap-southeast-2.s3.ap-southeast-2.amazonaws.com/latest/install
+                wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
                 sudo chmod +x ./install
                 sudo ./install auto
                 systemctl status codedeploy-agent
-                #使用CodeDepLoy服务需要在EC2中安装agent,具体代码解释，请参考
-                #https://docs.aws.amazon.com/zh_cn/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
+                # 使用CodeDeploy服务需要在EC2中安装agent，具体代码解释，请参考
+                # https://docs.aws.amazon.com/zh_cn/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
                 EOF
 }
 
