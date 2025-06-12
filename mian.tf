@@ -85,5 +85,5 @@ resource "aws_instance" "linux_instance" {
 
 #输出EC2实例的公网IPV4地址
 output "ec2_public_ipv4_url" {
-  value = join("", ["http://", aws_instance.Linux_instance.public_ip, ":80"])
+  value = join("", ["http://", aws_instance.linux_instance.public_ip, ":80"])
 }
