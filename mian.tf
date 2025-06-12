@@ -74,7 +74,7 @@ resource "aws_instance" "linux_instance" {
                 sudo yum -y install ruby
                 sudo yum -y install wget
                 cd /home/ec2-user
-                wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+                wget https://aws-codedeploy-ap-southeast-2.s3.ap-southeast-2.amazonaws.com/latest/install
                 sudo chmod +x ./install
                 sudo ./install auto
                 systemctl status codedeploy-agent
