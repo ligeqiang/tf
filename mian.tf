@@ -54,6 +54,7 @@ resource "aws_instance" "linux_instance" {
   tags = {
     Name = "ZPY-APP"
   }
+
   user_data = <<-EOF
                 #!/bin/bash
                 
